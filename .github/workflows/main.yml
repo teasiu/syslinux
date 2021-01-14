@@ -31,7 +31,8 @@ jobs:
         run: |
           make
           make bios
-          make netinstall
+          sudo make bios install
+          sudo make netinstall
           ls -l
 
   
