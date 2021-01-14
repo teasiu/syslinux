@@ -31,7 +31,8 @@ jobs:
         run: |
           make
           make bios
-          sudo make bios install
+          make bios efi64 installer
+          make O=./syslinux-obj efi64
           sudo make netinstall
           ls -l
 
