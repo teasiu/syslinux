@@ -32,9 +32,12 @@ jobs:
           make
           make bios
           make bios efi64 installer
-          make O=./syslinux-obj efi64
-          sudo make netinstall
-          ls -l
+          mkdir syslinux-efi
+          make O=./syslinux-efi efi64
+          mkdir syslinux-bios
+          make O=./syslinux-bios bios
+          ls -l ./syslinux-efi
+          ls -l ./syslinux-bios
 
   
       - name: Create Release
